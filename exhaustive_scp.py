@@ -132,29 +132,29 @@ def load_scp(filename):
 	
 
 def main():
-    '''universe = set(range(1, 11))
+    universe = set(range(1, 11))
     subsets = [{1, 2, 3, 8, 9, 10},
         {1, 2, 3, 4, 5},
         {4, 5, 7},
         {5, 6, 7},
-        {6, 7, 8, 9, 10}]'''
+        {6, 7, 8, 9, 10}]
 	## Unit Tests
     #print("All:",is_cover(universe, subsets, [1,1,1,1,1]))
     #print("Best:",is_cover(universe, subsets, [0,1,0,0,1]))
     #print("Not a cover:",is_cover(universe, subsets, [0,0,1,1,0]))
     
-    universe, subsets, subset_cost_vect = load_scp('./data/scpcyc06.txt')
+    #universe, subsets, subset_cost_vect = load_scp('./data/scpcyc06.txt')
     
     print('Subsets: ', subsets)
     print('Universe: ', universe)
-    print('Subset cost vect: ', subset_cost_vect)
+    #print('Subset cost vect: ', subset_cost_vect)
     print('**************** SOLVING ****************')
 
     #best_covers = naive_set_cover(universe, subsets)
     #print('Collection of best covers: ', best_covers)
     
-    cover = greedy_set_cover(universe, subsets)
-    print('Greedy cover: ', cover)
+    cover = naive_set_cover(universe, subsets)
+    print('naive ', cover)
  
 if __name__ == '__main__':
     main()
